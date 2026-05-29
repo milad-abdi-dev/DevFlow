@@ -1,0 +1,42 @@
+<Solution>
+  <Folder Name="/docs/" />
+  <Folder Name="/SolutionItems/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/API/">
+    <Project Path="src/API/DevFlow.Api/DevFlow.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/">
+    <Project Path="src/BuildingBlocks/DevFlow.BuildingBlocks.Application/DevFlow.BuildingBlocks.Application.csproj" />
+    <Project Path="src/BuildingBlocks/DevFlow.BuildingBlocks.Domain/DevFlow.BuildingBlocks.Domain.csproj" />
+    <Project Path="src/BuildingBlocks/DevFlow.BuildingBlocks.Infrastructure/DevFlow.BuildingBlocks.Infrastructure.csproj" />
+    <Project Path="src/BuildingBlocks/DevFlow.BuildingBlocks.Presentation/DevFlow.BuildingBlocks.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Identity/">
+    <Project Path="src/Modules/Identity/DevFlow.Modules.Identity.Application/DevFlow.Modules.Identity.Application.csproj" />
+    <Project Path="src/Modules/Identity/DevFlow.Modules.Identity.Domain/DevFlow.Modules.Identity.Domain.csproj" />
+    <Project Path="src/Modules/Identity/DevFlow.Modules.Identity.Infrastructure/DevFlow.Modules.Identity.Infrastructure.csproj" />
+    <Project Path="src/Modules/Identity/DevFlow.Modules.Identity.Presentation/DevFlow.Modules.Identity.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Tasks/">
+    <Project Path="src/Modules/Tasks/DevFlow.Modules.Tasks.Application/DevFlow.Modules.Tasks.Application.csproj" />
+    <Project Path="src/Modules/Tasks/DevFlow.Modules.Tasks.Domain/DevFlow.Modules.Tasks.Domain.csproj" />
+    <Project Path="src/Modules/Tasks/DevFlow.Modules.Tasks.Infrastructure/DevFlow.Modules.Tasks.Infrastructure.csproj" />
+    <Project Path="src/Modules/Tasks/DevFlow.Modules.Tasks.Presentation/DevFlow.Modules.Tasks.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Workspaces/">
+    <Project Path="src/Modules/Workspaces/DevFlow.Modules.Workspaces.Application/DevFlow.Modules.Workspaces.Application.csproj" />
+    <Project Path="src/Modules/Workspaces/DevFlow.Modules.Workspaces.Domain/DevFlow.Modules.Workspaces.Domain.csproj" />
+    <Project Path="src/Modules/Workspaces/DevFlow.Modules.Workspaces.Infrastructure/DevFlow.Modules.Workspaces.Infrastructure.csproj" />
+    <Project Path="src/Modules/Workspaces/DevFlow.Modules.Workspaces.Presentation/DevFlow.Modules.Workspaces.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/ArchitectureTests/" />
+  <Folder Name="/tests/IntegrationTests/" />
+  <Folder Name="/tests/UnitTests/" />
+</Solution>
