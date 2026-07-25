@@ -11,8 +11,19 @@
   <Folder Name="/src/API/">
     <Project Path="src/API/DevFlow.Api/DevFlow.Api.csproj" />
   </Folder>
-  <Folder Name="/src/Common/" />
+  <Folder Name="/src/Common/">
+    <Project Path="src/Common/DevFlow.Common.Application/DevFlow.Common.Application.csproj" />
+    <Project Path="src/Common/DevFlow.Common.Domain/DevFlow.Common.Domain.csproj" />
+    <Project Path="src/Common/DevFlow.Common.Infrastructure/DevFlow.Common.Infrastructure.csproj" />
+    <Project Path="src/Common/DevFlow.Common.Presentation/DevFlow.Common.Presentation.csproj" />
+  </Folder>
   <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Workspace/">
+    <Project Path="src/Modules/Workspace/DevFlow.Modules.Workspaces.Application/DevFlow.Modules.Workspaces.Application.csproj" />
+    <Project Path="src/Modules/Workspace/DevFlow.Modules.Workspaces.Domain/DevFlow.Modules.Workspaces.Domain.csproj" />
+    <Project Path="src/Modules/Workspace/DevFlow.Modules.Workspaces.Infrastructure/DevFlow.Modules.Workspaces.Infrastructure.csproj" />
+    <Project Path="src/Modules/Workspace/DevFlow.Modules.Workspaces.Presentation/DevFlow.Modules.Workspaces.Presentation.csproj" />
+  </Folder>
   <Folder Name="/tests/" />
   <Folder Name="/tests/ArchitectureTests/" />
   <Folder Name="/tests/IntegrationTests/" />
