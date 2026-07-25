@@ -1,60 +1,71 @@
 # DevFlow 🚀
 
-DevFlow is a modern workflow management platform designed to help software teams plan, organize, track, and deliver work efficiently.
-
-The goal of DevFlow is to simplify collaboration and project execution by combining task management, workflow automation, team collaboration, and productivity insights into a clean and scalable platform tailored for modern engineering teams.
-
----
-
-# ✨ Vision
-
-Software teams often struggle with fragmented workflows, disconnected communication, and inefficient task management processes.
-
-DevFlow aims to provide a centralized and scalable solution that improves:
-
-* Team collaboration
-* Workflow visibility
-* Task organization
-* Productivity tracking
-* Agile project execution
-
+> A workflow and task management platform built to practice modern backend architecture with .NET.
+DevFlow is a portfolio project focused on building production-style software rather than just implementing CRUD APIs. The project follows Domain-Driven Design, Clean Architecture, CQRS, and Event-Driven principles while evolving through Event Storming and iterative development.The project is heavily inspired by platforms like Jira, Linear, Trello, and GitHub Projects while focusing on clean architecture, modularity, and maintainability.
 The project is heavily inspired by platforms like Jira, Linear, Trello, and GitHub Projects while focusing on clean architecture, modularity, and maintainability.
 
 ---
 
-# 🏗️ Architecture
+## 🎯 Goals
+
+- Build software using real-world architecture
+- Practice Modular Monolith architecture and Domain-Driven Design
+- Apply CQRS and Event-Driven design
+- Improve testing and maintainability
+- Learn how complex business workflows evolve over time
+
+---
+
+## 📚 Features
+
+- ✅ Workspaces
+- ✅ Projects
+- ✅ Workflows
+- ✅ Tasks
+- ✅ Workflow Execution
+- ✅ Assignments
+- ✅ Notifications
+- ✅ Activity History
+- ✅ Comments
+- 🚧 More features will be added incrementally
+
+---
+
+## 🏗️ Architecture
 
 DevFlow is being built using a **Modular Monolith Architecture** combined with principles from:
 
-* Domain-Driven Design (DDD)
-* Clean Architecture
-* CQRS
-* Event-Driven Design
+- Clean Architecture
+- Domain-Driven Design (DDD)
+- CQRS
+- Vertical Slice Architecture
+- Event-Driven Design
+- Repository Pattern
+- Result Pattern
 
 Each module is independently organized into:
 
-* Domain
-* Application
-* Infrastructure
-* Presentation
+- Domain
+- Application
+- Infrastructure
+- Presentation
 
 The goal is to achieve strong modular boundaries while maintaining the simplicity and deployment advantages of a monolithic system.
 
 ---
 
-# 📦 Solution Structure
+## 📦 Solution Structure
 
 ```txt
 src/
 │
 ├── API/
 │
-├── BuildingBlocks/
+├── Common/
 │
 ├── Modules/
 │   ├── Identity/
-│   ├── Tasks/
-│   └── Workspaces/
+│   └── .../
 │
 tests/
 │
@@ -63,55 +74,41 @@ docs/
 
 ---
 
-# 🛠️ Technologies
+## 🛠️ Technologies
 
-* .NET 10
-* ASP.NET Core
-* PostgreSQL
-* Entity Framework Core
-* Docker & Docker Compose
-* MediatR
+### Backend
 
----
+- .NET 10
+- ASP.NET Core
+- PostgreSQL
+- Entity Framework Core
+- Docker & Docker Compose
+- MediatR
+- MassTransit
+- Redis
 
-# 🎯 Project Goals
+### Infrastructure
 
-This project is being developed not only as a workflow management platform but also as a long-term engineering learning project focused on:
+- Docker
+- Docker Compose
 
-* Scalable backend architecture
-* Clean code practices
-* Domain modeling
-* Modular design
-* Software craftsmanship
-* Production-ready engineering practices
+### Testing
 
----
-
-# 📚 Planned Features
-
-* Workspace management
-* Task management
-* Kanban workflows
-* Team collaboration
-* Notifications
-* Activity timeline
-* Role & permission management
-* Productivity analytics
-* Workflow automation
-
+- xUnit
+- FluentAssertions
 ---
 
 # 🧪 Engineering Practices
 
 The project aims to follow professional engineering standards including:
 
-* Unit Testing
-* Integration Testing
-* Architecture Testing
-* Structured Logging
-* CI/CD Pipelines
-* Dockerized Development Environment
-* Documentation & ADRs
+- Unit Testing
+- Integration Testing
+- Architecture Testing
+- Structured Logging
+- CI/CD Pipelines
+- Dockerized Development Environment
+- Documentation & ADRs
 
 ---
 
