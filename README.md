@@ -18,15 +18,15 @@ The project is heavily inspired by platforms like Jira, Linear, Trello, and GitH
 
 ## 📚 Features
 
-- ✅ Workspaces
-- ✅ Projects
-- ✅ Workflows
-- ✅ Tasks
-- ✅ Workflow Execution
-- ✅ Assignments
-- ✅ Notifications
-- ✅ Activity History
-- ✅ Comments
+- ⚒👷‍♂️ Workspaces
+- ⬜ Projects
+- ⬜ Workflows
+- ⬜ Tasks
+- ⬜ Workflow Execution
+- ⬜ Assignments
+- ⬜ Notifications
+- ⬜ Activity History
+- ⬜ Comments
 - 🚧 More features will be added incrementally
 
 ---
