@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  devflow.api:
+    image: ${DOCKER_REGISTRY-}devflowapi
+    container_name: DevFlow.Api
+    build:
+      context: .
+      dockerfile: src/API/DevFlow.Api/Dockerfile
+    ports:
+      - 5000:8080
+      - 5001:8081
+        
+  devflow.database:
+    image: postgres:latest
+    container_name: DevFlow.Database
+    environment:
+      - POSTGRES_DB=devflow
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  
+  devflow.seq:
+    image: datalust/seq:latest
+    container_name: DevFlow.Seq
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 5341:5341
+      - 8081:80
+
+  devflow.redis:
+    image: redis:latest
+    container_name: DevFlow.Redis
+    restart: always
+    ports:
+      - 6379:6379
