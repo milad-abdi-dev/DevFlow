@@ -40,3 +40,7 @@ app.MapHealthChecks("health", new HealthCheckOptions
 app.UseSerilogRequestLogging();
 
 app.Run();
+
+#pragma warning disable CA1515 // WebApplicationFactory requires a publicly accessible entry point.
+public partial class Program;
+#pragma warning restore CA1515
