@@ -3,6 +3,9 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup Label="All">
+    <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
+    <PackageVersion Include="AspNetCore.HealthChecks.Redis" Version="9.0.0" />
+    <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
     <PackageVersion Include="FluentValidation" Version="12.1.1" />
     <PackageVersion Include="MassTransit" Version="9.1.2" />
     <PackageVersion Include="MassTransit.Abstractions" Version="9.1.2" />
