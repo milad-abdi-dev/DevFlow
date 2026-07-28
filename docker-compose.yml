@@ -19,17 +19,18 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
-      - ./.containers/db:/var/lib/postgresql/data
+      - ./.containers/db:/var/lib/postgresql
     ports:
-      - 5432:5432
+      - 54320:5432
   
   devflow.seq:
     image: datalust/seq:latest
     container_name: DevFlow.Seq
     environment:
       - ACCEPT_EULA=Y
+      - SEQ_FIRSTRUN_ADMINPASSWORD=Qwerty*7453
     ports:
-      - 5341:5341
+      - 53410:5341
       - 8081:80
 
   devflow.redis:
