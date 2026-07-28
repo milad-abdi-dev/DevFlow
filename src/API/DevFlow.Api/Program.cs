@@ -1,3 +1,4 @@
+using DevFlow.Modules.Workspaces.Infrastructure;
 using DevFlow.Modules.Workspaces.Presentation;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -20,6 +21,8 @@ string redisConnectionString = builder.Configuration.GetConnectionString("Cache"
 builder.Services.AddHealthChecks()
     .AddNpgSql(databaseConnectionString)
     .AddRedis(redisConnectionString);
+
+builder.Services.AddWorkspacesModule(builder.Configuration);
 
 WebApplication app = builder.Build();
 

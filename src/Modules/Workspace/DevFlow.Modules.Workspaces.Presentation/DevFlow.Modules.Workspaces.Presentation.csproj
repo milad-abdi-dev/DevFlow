@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Common\DevFlow.Common.Presentation\DevFlow.Common.Presentation.csproj" />
+      <ProjectReference Include="..\DevFlow.Modules.Workspaces.Application\DevFlow.Modules.Workspaces.Application.csproj" />
+    </ItemGroup>
+
 </Project>
