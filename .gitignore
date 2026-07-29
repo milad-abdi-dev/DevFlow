@@ -406,6 +406,12 @@ FodyWeavers.xsd
 *.sln.iml
 .idea/
 
+# Docker Compose local runtime data
+.containers/
+
+# Rider-generated Docker Compose overrides
+**/docker-compose.generated.override.yml
+
 ##
 ## Visual studio for Mac
 ##

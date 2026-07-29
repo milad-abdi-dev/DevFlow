@@ -4,7 +4,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MediatR" />
+      <PackageReference Include="MediatR.Contracts" />
+      <PackageReference Include="Ulid" />
     </ItemGroup>
 
 </Project>
