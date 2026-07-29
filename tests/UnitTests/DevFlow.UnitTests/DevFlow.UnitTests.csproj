@@ -1,25 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
-  </PropertyGroup>
+    <PropertyGroup>
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" />
-    <PackageReference Include="NSubstitute" />
-    <PackageReference Include="xunit.runner.visualstudio">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="xunit.v3" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk"/>
+        <PackageReference Include="NSubstitute"/>
+        <PackageReference Include="xunit.runner.visualstudio">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="xunit.v3"/>
+        <PackageReference Include="FluentAssertions"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Common\DevFlow.Common.Application\DevFlow.Common.Application.csproj" />
-    <ProjectReference Include="..\..\..\src\Common\DevFlow.Common.Domain\DevFlow.Common.Domain.csproj" />
-    <ProjectReference Include="..\..\..\src\Modules\Workspace\DevFlow.Modules.Workspaces.Application\DevFlow.Modules.Workspaces.Application.csproj" />
-    <ProjectReference Include="..\..\..\src\Modules\Workspace\DevFlow.Modules.Workspaces.Domain\DevFlow.Modules.Workspaces.Domain.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\src\Common\DevFlow.Common.Application\DevFlow.Common.Application.csproj"/>
+        <ProjectReference Include="..\..\..\src\Common\DevFlow.Common.Domain\DevFlow.Common.Domain.csproj"/>
+        <ProjectReference Include="..\..\..\src\Modules\Workspace\DevFlow.Modules.Workspaces.Application\DevFlow.Modules.Workspaces.Application.csproj"/>
+        <ProjectReference Include="..\..\..\src\Modules\Workspace\DevFlow.Modules.Workspaces.Domain\DevFlow.Modules.Workspaces.Domain.csproj"/>
+    </ItemGroup>
 
 </Project>

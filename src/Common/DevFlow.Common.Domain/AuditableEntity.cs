@@ -2,7 +2,7 @@ namespace DevFlow.Common.Domain;
 
 public abstract class AuditableEntity : Entity
 {
-    public DateTime CreatedOnUtc { get; set; }
+    public DateTimeOffset CreatedOn { get; set; }
 
-    public DateTime? ModifiedOnUtc { get; set; }
+    public DateTimeOffset? ModifiedOn { get; set; }
 }
