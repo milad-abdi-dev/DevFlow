@@ -64,13 +64,27 @@ src/
 ├── Common/
 │
 ├── Modules/
-│   ├── Identity/
+│   ├── Workspaces/
 │   └── .../
 │
 tests/
 │
 docs/
 ```
+
+---
+
+## 📖 Documentation
+
+Before contributing, start with:
+
+- [Architecture](docs/architecture.md) — system boundaries and current design
+- [Conventions](docs/conventions.md) — coding and testing rules
+- [Development](docs/development.md) — setup, commands, and configuration
+- [Testing](docs/testing.md) — required coverage and behavior-focused test style
+- [Roadmap](docs/roadmap.md) — current status and planned work
+
+AI coding agents should follow the repository instructions in [AGENTS.md](AGENTS.md).
 
 ---
 

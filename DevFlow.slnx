@@ -1,8 +1,15 @@
 <Solution>
-  <Folder Name="/docs/" />
+  <Folder Name="/docs/">
+    <File Path="docs/architecture.md" />
+    <File Path="docs/conventions.md" />
+    <File Path="docs/development.md" />
+    <File Path="docs/roadmap.md" />
+    <File Path="docs/testing.md" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
     <File Path=".gitignore" />
+    <File Path="AGENTS.md" />
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />
     <File Path="docker-compose.override.yml" />
@@ -20,7 +27,7 @@
     <Project Path="src/Common/DevFlow.Common.Presentation/DevFlow.Common.Presentation.csproj" />
   </Folder>
   <Folder Name="/src/Modules/" />
-  <Folder Name="/src/Modules/Workspace/">
+  <Folder Name="/src/Modules/Workspaces/">
     <Project Path="src/Modules/Workspace/DevFlow.Modules.Workspaces.Application/DevFlow.Modules.Workspaces.Application.csproj" />
     <Project Path="src/Modules/Workspace/DevFlow.Modules.Workspaces.Domain/DevFlow.Modules.Workspaces.Domain.csproj" />
     <Project Path="src/Modules/Workspace/DevFlow.Modules.Workspaces.Infrastructure/DevFlow.Modules.Workspaces.Infrastructure.csproj" />
