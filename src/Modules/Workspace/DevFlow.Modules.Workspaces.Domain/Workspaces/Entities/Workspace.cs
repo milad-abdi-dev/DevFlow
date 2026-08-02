@@ -1,6 +1,7 @@
 ﻿using DevFlow.Common.Domain;
+using DevFlow.Modules.Workspaces.Domain.Workspaces.Enums;
 
-namespace DevFlow.Modules.Workspaces.Domain.Workspaces;
+namespace DevFlow.Modules.Workspaces.Domain.Workspaces.Entities;
 
 public sealed class Workspace : AggregateRoot
 {
@@ -28,15 +29,8 @@ public sealed class Workspace : AggregateRoot
         State = WorkspaceState.Archived;
     }
 
-    public void Activate()
+    public void Restore()
     {
         State = WorkspaceState.Active;
     }
-}
-
-public enum WorkspaceState
-{
-    Active,
-    Archived,
-    Deleted
 }

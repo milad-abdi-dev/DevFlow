@@ -32,10 +32,10 @@ public static class ApiResults
         static string GetDetail(Error error) =>
             error.Type switch
             {
-                ErrorType.Validation => error.Description,
-                ErrorType.Problem => error.Description,
-                ErrorType.NotFound => error.Description,
-                ErrorType.Conflict => error.Description,
+                ErrorType.Validation => error.Message,
+                ErrorType.Problem => error.Message,
+                ErrorType.NotFound => error.Message,
+                ErrorType.Conflict => error.Message,
                 _ => "An unexpected error occurred"
             };
 

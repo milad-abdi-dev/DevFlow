@@ -1,4 +1,5 @@
 ﻿using DevFlow.Common.Application.Messaging;
+using DevFlow.Common.Domain;
 
 namespace DevFlow.Modules.Workspaces.Application.Workspaces.CreateWorkspace;
 

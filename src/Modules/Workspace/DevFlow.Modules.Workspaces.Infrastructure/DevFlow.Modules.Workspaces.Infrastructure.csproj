@@ -13,4 +13,8 @@
       <ProjectReference Include="..\DevFlow.Modules.Workspaces.Presentation\DevFlow.Modules.Workspaces.Presentation.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Database\Configurations\" />
+    </ItemGroup>
+
 </Project>

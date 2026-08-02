@@ -7,7 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Common\DevFlow.Common.Application\DevFlow.Common.Application.csproj" />
       <ProjectReference Include="..\..\..\Common\DevFlow.Common.Domain\DevFlow.Common.Domain.csproj" />
+      <ProjectReference Include="..\DevFlow.Modules.Workspaces.Domain\DevFlow.Modules.Workspaces.Domain.csproj" />
     </ItemGroup>
 
 </Project>

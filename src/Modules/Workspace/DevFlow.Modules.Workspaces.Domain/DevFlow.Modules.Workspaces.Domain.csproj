@@ -10,4 +10,7 @@
       <ProjectReference Include="..\..\..\Common\DevFlow.Common.Domain\DevFlow.Common.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <Folder Include="Workspaces\Enums\" />
+    </ItemGroup>
 </Project>

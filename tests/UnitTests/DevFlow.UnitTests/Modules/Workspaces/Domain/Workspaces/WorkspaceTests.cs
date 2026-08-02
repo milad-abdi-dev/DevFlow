@@ -1,4 +1,5 @@
-﻿using DevFlow.Modules.Workspaces.Domain.Workspaces;
+﻿using DevFlow.Modules.Workspaces.Domain.Workspaces.Entities;
+using DevFlow.Modules.Workspaces.Domain.Workspaces.Enums;
 using FluentAssertions;
 
 namespace DevFlow.UnitTests.Modules.Workspaces.Domain.Workspaces;
@@ -36,14 +37,14 @@ public sealed class WorkspaceTests
     }
     
     [Fact]
-    public void Activate_workspaces()
+    public void Restore_workspaces()
     {
         string name = "DevFlow";
         string description = "DevFlow is a workflow management project.";
         var ownerId = Guid.NewGuid();
         var workspace = Workspace.Create(name,  description, ownerId);
 
-        workspace.Activate();
+        workspace.Restore();
         
         workspace.State.Should().Be(WorkspaceState.Active);
     }
