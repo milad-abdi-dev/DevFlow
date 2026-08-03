@@ -33,18 +33,15 @@ public class Result
         new(default, false, error);
 }
 
-public class Result<TValue> : Result
+public class Result<TValue>(TValue? value, bool isSuccess, Error error) : Result(isSuccess, error)
 {
-    public Result(TValue? value, bool isSuccess, Error error)
-        : base(isSuccess, error)
-    {
-        Value = value;
-    }
-
     [NotNull]
-    public TValue Value => IsSuccess
-        ? field!
-        : throw new InvalidOperationException("The value of a failure result can't be accessed.");
+    public TValue Value
+    {
+        get => IsSuccess
+            ? field!
+            : throw new InvalidOperationException("The value of a failure result can't be accessed.");
+    } = value;
 
     public static implicit operator Result<TValue>(TValue? value) =>
         value is not null ? Success(value) : Failure<TValue>(Error.NullValue);

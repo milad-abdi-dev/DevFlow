@@ -6,27 +6,18 @@ using DevFlow.Modules.Workspaces.Domain.Workspaces.Entities;
 
 namespace DevFlow.Modules.Workspaces.Application.Workspaces.CreateWorkspace;
 
-public class CreateWorkspaceCommandHandler : ICommandHandler<CreateWorkspaceCommand>
+public class CreateWorkspaceCommandHandler(
+    IWorkspaceRepository workspaceRepository,
+    IWorkspaceUniquenessChecker workspaceUniquenessChecker)
+    : ICommandHandler<CreateWorkspaceCommand>
 {
-    private readonly IWorkspaceRepository _workspaceRepository;
-    private readonly IWorkspaceUniquenessChecker _workspaceUniquenessChecker;
-
-    public CreateWorkspaceCommandHandler(
-        IWorkspaceRepository workspaceRepository,
-        IWorkspaceUniquenessChecker workspaceUniquenessChecker
-        )
-    {
-        _workspaceRepository = workspaceRepository;
-        _workspaceUniquenessChecker = workspaceUniquenessChecker;
-    }
-    
     public async Task<Result> Handle(CreateWorkspaceCommand request, CancellationToken cancellationToken)
     {
-        await _workspaceUniquenessChecker.EnsureNameIsUniqueAsync(request.Name, cancellationToken);
+        await workspaceUniquenessChecker.EnsureNameIsUniqueAsync(request.Name, cancellationToken);
         
         var workspace = Workspace.Create(request.Name, request.Description, request.OwnerId);
         
-        await _workspaceRepository.AddAsync(workspace, cancellationToken);
+        await workspaceRepository.AddAsync(workspace, cancellationToken);
         
         return Result.Success();
     }

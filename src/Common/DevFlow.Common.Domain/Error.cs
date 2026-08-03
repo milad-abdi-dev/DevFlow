@@ -1,25 +1,12 @@
 ﻿namespace DevFlow.Common.Domain;
 
-public record Error
+public record Error(string Code, string Message, ErrorType Type)
 {
     public static readonly Error None = new(string.Empty, string.Empty, ErrorType.Failure);
     public static readonly Error NullValue = new(
         "General.Null",
         "Null value was provided",
         ErrorType.Failure);
-
-    public Error(string code, string message, ErrorType type)
-    {
-        Code = code;
-        Message = message;
-        Type = type;
-    }
-
-    public string Code { get; }
-
-    public string Message { get; }
-
-    public ErrorType Type { get; }
 
     public static Error Failure(string code, string description) =>
         new(code, description, ErrorType.Failure);
