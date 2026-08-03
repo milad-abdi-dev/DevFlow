@@ -1,5 +1,7 @@
+using DevFlow.Api.Extensions;
+using DevFlow.Common.Application;
+using DevFlow.Common.Infrastructure;
 using DevFlow.Modules.Workspaces.Infrastructure;
-using DevFlow.Modules.Workspaces.Presentation;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Serilog;
@@ -15,8 +17,22 @@ builder.Services.AddSwaggerGen(options =>
         type.FullName?.Replace('+', '.') ?? type.Name);
 });
 
+builder.Services.AddApplication([
+    DevFlow.Modules.Workspaces.Application.AssemblyReference.Assembly
+]);
+
 string databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
 string redisConnectionString = builder.Configuration.GetConnectionString("Cache")!;
+
+builder.Services.AddInfrastructure(
+    [],
+    databaseConnectionString,
+    redisConnectionString,
+    [
+        DevFlow.Modules.Workspaces.Infrastructure.AssemblyReference.Assembly
+    ]);
+
+builder.Configuration.AddModuleConfiguration(["workspaces"]);
 
 builder.Services.AddHealthChecks()
     .AddNpgSql(databaseConnectionString)
@@ -39,7 +55,7 @@ app.MapHealthChecks("health", new HealthCheckOptions
 
 app.UseSerilogRequestLogging();
 
-app.Run();
+await app.RunAsync();
 
 #pragma warning disable CA1515 // WebApplicationFactory requires a publicly accessible entry point.
 public partial class Program;

@@ -1,5 +1,7 @@
 ﻿using DevFlow.Common.Infrastructure.Interceptors;
 using DevFlow.Modules.Workspaces.Application.Abstractions;
+using DevFlow.Modules.Workspaces.Domain.Workspaces.DomainServices;
+using DevFlow.Modules.Workspaces.Domain.Workspaces.DomainServices.Implementations;
 using DevFlow.Modules.Workspaces.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
@@ -31,5 +33,7 @@ public static class WorkspacesModule
                 .UseSnakeCaseNamingConvention());
 
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<WorkspacesDbContext>());
+        
+        services.AddScoped<IWorkspaceUniquenessChecker, WorkspaceUniquenessChecker>();
     }
 }

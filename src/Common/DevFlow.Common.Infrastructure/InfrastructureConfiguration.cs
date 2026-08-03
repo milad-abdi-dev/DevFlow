@@ -1,7 +1,9 @@
-﻿using DevFlow.Common.Application.Caching;
+﻿using System.Reflection;
+using DevFlow.Common.Application.Caching;
 using DevFlow.Common.Application.Clock;
 using DevFlow.Common.Application.Data;
 using DevFlow.Common.Application.EventBus;
+using DevFlow.Common.Domain;
 using DevFlow.Common.Infrastructure.Caching;
 using DevFlow.Common.Infrastructure.Clock;
 using DevFlow.Common.Infrastructure.Data;
@@ -20,7 +22,8 @@ public static class InfrastructureConfiguration
         this IServiceCollection services,
         Action<IRegistrationConfigurator>[] moduleConfigureConsumers,
         string databaseConnectionString,
-        string redisConnectionString)
+        string redisConnectionString,
+        Assembly[] moduleAssemblies)
     {
         NpgsqlDataSource npgsqlDataSource = new NpgsqlDataSourceBuilder(databaseConnectionString).Build();
         services.TryAddSingleton(npgsqlDataSource);
@@ -62,6 +65,18 @@ public static class InfrastructureConfiguration
                 cfg.ConfigureEndpoints(context);
             });
         });
+
+        services.Scan(scan =>
+            scan.FromAssemblies(moduleAssemblies)
+                .AddClasses(classes => classes.AssignableTo<IRepository>())
+                .As<IRepository>()
+                .WithScopedLifetime());
+        
+        services.Scan(scan =>
+            scan.FromAssemblies(moduleAssemblies)
+                .AddClasses(classes => classes.AssignableTo<IDomainService>())
+                .As<IDomainService>()
+                .WithScopedLifetime());
 
         return services;
     }
