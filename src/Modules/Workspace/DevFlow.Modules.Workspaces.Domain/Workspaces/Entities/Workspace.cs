@@ -8,8 +8,8 @@ public sealed class Workspace : AggregateRoot
     public Guid Id { get; private set; }
     public string Name { get; private set; }
     public string Description { get; private set; }
-    public Guid  OwnerId { get; private set; }
-    public WorkspaceState State { get; private set; }
+    public Guid OwnerId { get; private set; }
+    public WorkspaceStatus Status { get; private set; }
     public bool IsDeleted { get; private set; }
 
     public static Workspace Create(string name, string description, Guid ownerId)
@@ -20,17 +20,17 @@ public sealed class Workspace : AggregateRoot
             Name = name,
             Description = description,
             OwnerId = ownerId,
-            State = WorkspaceState.Active
+            Status = WorkspaceStatus.Active
         };
     }
 
     public void Archive()
     {
-        State = WorkspaceState.Archived;
+        Status = WorkspaceStatus.Archived;
     }
 
     public void Restore()
     {
-        State = WorkspaceState.Active;
+        Status = WorkspaceStatus.Active;
     }
 }

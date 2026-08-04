@@ -1,7 +1,7 @@
 ﻿namespace DevFlow.Modules.Workspaces.Domain.Workspaces.Enums;
 
-public enum WorkspaceState
+public enum WorkspaceStatus
 {
-    Active,
-    Archived
+    Active = 1,
+    Archived = 2
 }

@@ -1,5 +1,6 @@
 using DevFlow.Api.Extensions;
 using DevFlow.Common.Application;
+using DevFlow.Common.Domain;
 using DevFlow.Common.Infrastructure;
 using DevFlow.Modules.Workspaces.Infrastructure;
 using HealthChecks.UI.Client;
@@ -27,10 +28,7 @@ string redisConnectionString = builder.Configuration.GetConnectionString("Cache"
 builder.Services.AddInfrastructure(
     [],
     databaseConnectionString,
-    redisConnectionString,
-    [
-        DevFlow.Modules.Workspaces.Infrastructure.AssemblyReference.Assembly
-    ]);
+    redisConnectionString);
 
 builder.Configuration.AddModuleConfiguration(["workspaces"]);
 

@@ -1,4 +1,6 @@
-﻿using DevFlow.Common.Infrastructure.Interceptors;
+﻿using System.Reflection;
+using DevFlow.Common.Domain;
+using DevFlow.Common.Infrastructure.Interceptors;
 using DevFlow.Modules.Workspaces.Application.Abstractions;
 using DevFlow.Modules.Workspaces.Domain.Workspaces.DomainServices;
 using DevFlow.Modules.Workspaces.Domain.Workspaces.DomainServices.Implementations;
@@ -16,6 +18,8 @@ public static class WorkspacesModule
         this IServiceCollection services,
         IConfiguration configuration)
     {
+        services.AddDomainServices();
+        services.AddRepositories();
         services.AddInfrastructure(configuration);
         
         return services;
@@ -35,5 +39,26 @@ public static class WorkspacesModule
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<WorkspacesDbContext>());
         
         services.AddScoped<IWorkspaceUniquenessChecker, WorkspaceUniquenessChecker>();
+    }
+    
+    private static void AddDomainServices(this IServiceCollection services)
+    {
+        services.Scan(scan =>
+            scan.FromAssemblies(
+                    Domain.AssemblyReference.Assembly)
+                .AddClasses(classes => classes.AssignableTo<IDomainService>())
+                .AsImplementedInterfaces()
+                .WithScopedLifetime());
+    }
+
+    private static void AddRepositories(this IServiceCollection services)
+    {
+        services.Scan(scan =>
+            scan.FromAssemblies(
+                    Domain.AssemblyReference.Assembly,
+                    Infrastructure.AssemblyReference.Assembly)
+                .AddClasses(classes => classes.AssignableTo<IRepository>())
+                .AsImplementedInterfaces()
+                .WithScopedLifetime());
     }
 }

@@ -22,8 +22,7 @@ public static class InfrastructureConfiguration
         this IServiceCollection services,
         Action<IRegistrationConfigurator>[] moduleConfigureConsumers,
         string databaseConnectionString,
-        string redisConnectionString,
-        Assembly[] moduleAssemblies)
+        string redisConnectionString)
     {
         NpgsqlDataSource npgsqlDataSource = new NpgsqlDataSourceBuilder(databaseConnectionString).Build();
         services.TryAddSingleton(npgsqlDataSource);
@@ -65,18 +64,6 @@ public static class InfrastructureConfiguration
                 cfg.ConfigureEndpoints(context);
             });
         });
-
-        services.Scan(scan =>
-            scan.FromAssemblies(moduleAssemblies)
-                .AddClasses(classes => classes.AssignableTo<IRepository>())
-                .As<IRepository>()
-                .WithScopedLifetime());
-        
-        services.Scan(scan =>
-            scan.FromAssemblies(moduleAssemblies)
-                .AddClasses(classes => classes.AssignableTo<IDomainService>())
-                .As<IDomainService>()
-                .WithScopedLifetime());
 
         return services;
     }

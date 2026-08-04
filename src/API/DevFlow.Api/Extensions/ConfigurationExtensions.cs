@@ -1,4 +1,7 @@
-﻿namespace DevFlow.Api.Extensions;
+﻿using System.Reflection;
+using DevFlow.Common.Domain;
+
+namespace DevFlow.Api.Extensions;
 
 internal static class ConfigurationExtensions
 {

@@ -18,7 +18,7 @@ public sealed class WorkspaceTests
         workspace.Name.Should().Be(name);
         workspace.Description.Should().Be(description);
         workspace.OwnerId.Should().Be(ownerId);
-        workspace.State.Should().Be(WorkspaceState.Active);
+        workspace.Status.Should().Be(WorkspaceStatus.Active);
         workspace.Id.Should().NotBeEmpty();
         workspace.IsDeleted.Should().BeFalse();
     }
@@ -33,7 +33,7 @@ public sealed class WorkspaceTests
 
         workspace.Archive();
         
-        workspace.State.Should().Be(WorkspaceState.Archived);
+        workspace.Status.Should().Be(WorkspaceStatus.Archived);
     }
     
     [Fact]
@@ -46,7 +46,7 @@ public sealed class WorkspaceTests
 
         workspace.Restore();
         
-        workspace.State.Should().Be(WorkspaceState.Active);
+        workspace.Status.Should().Be(WorkspaceStatus.Active);
     }
     
     
